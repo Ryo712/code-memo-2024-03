@@ -1,0 +1,39 @@
+<!--selectオブジェクト-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectオブジェクト</title>
+</head>
+<body>
+    <select id="select">
+        <option value="1">選択肢1</option>
+        <option value="2">選択肢2</option>
+        <option value="3">選択肢3</option>
+    </select>
+<!--valueプロパティを使って、選択されているオプションの値を取得。-->
+    <script>
+        // Select要素を取得
+        const select = document.getElementById('select');
+
+        // 選択されているオプションの値を取得
+        const selectedValue = select.value;
+
+        // 選択されているオプションのテキストを取得
+        const selectedText = select.options[select.selectedIndex].text;
+
+        // オプションを追加
+        const newOption = document.createElement('option');
+        newOption.value = '4';
+        newOption.textContent = '選択肢4';
+        select.appendChild(newOption);
+
+        // オプションを削除
+        select.removeChild(select.options[0]);
+
+        // 選択されたオプションを変更
+        select.selectedIndex = 2;
+    </script>
+</body>
+</html>
